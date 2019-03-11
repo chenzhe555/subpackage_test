@@ -9,6 +9,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import Toast from 'react-native-cz-toast';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -25,6 +26,9 @@ export default class DetailMainVC extends Component<Props> {
     this.state = {};
 
     console.log('加载了业务界面Detail');
+    setTimeout( () => {
+        Toast.show('加载了业务界面Detail');
+    }, 1000);
   }
 
   render() {

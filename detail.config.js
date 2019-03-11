@@ -19,7 +19,6 @@ function processCustomModuleFilter(module) {
     if(module['path'].indexOf(pathSep + 'node_modules' + pathSep) > 0){
         return false;
     }
-    console.log('chenzhe:   ' + module['path']);
     return true;
 }
 
