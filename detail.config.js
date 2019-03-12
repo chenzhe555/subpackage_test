@@ -16,7 +16,7 @@ function createCustomModuleIdFactory() {
 
 function processCustomModuleFilter(module) {
     //业务bundle过滤node_modules下模块
-    if(module['path'].indexOf(pathSep + 'node_modules' + pathSep) > 0){
+    if (module['path'].indexOf(pathSep + 'node_modules' + pathSep) > 0){
         return false;
     }
     return true;

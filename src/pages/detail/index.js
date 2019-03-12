@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import Toast from 'react-native-cz-toast';
 
 const instructions = Platform.select({
@@ -36,6 +36,7 @@ export default class DetailMainVC extends Component<Props> {
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>这里加载的是业务界面Detail</Text>
+        <Image source={require('../../assets/images/mj_driver_delivery.png')} style={[{width: 18, height: 16}]}/>
       </View>
     );
   }

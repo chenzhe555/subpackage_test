@@ -14,6 +14,7 @@ function createCustomModuleIdFactory() {
     }
 }
 
+
 module.exports = {
     serializer: {
         createModuleIdFactory: createCustomModuleIdFactory
