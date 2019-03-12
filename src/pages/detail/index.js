@@ -36,7 +36,6 @@ export default class DetailMainVC extends Component<Props> {
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>这里加载的是业务界面Detail</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
       </View>
     );
   }

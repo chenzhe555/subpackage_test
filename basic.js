@@ -17,5 +17,4 @@ import 'react-native-cz-permission';
 import 'react-native-cz-reddot';
 import 'react-native-cz-scroll-tab';
 import 'react-native-cz-toast';
-import 'react-native-cz-toast';
 console.log('加载了基础框架...');
