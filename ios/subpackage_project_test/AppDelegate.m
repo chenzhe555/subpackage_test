@@ -15,14 +15,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  RootViewController * root = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
-
-  
-  [[RCTBridge alloc] initWithBundleURL:[[NSBundle mainBundle] URLForResource:@"common" withExtension:@"bundle"] moduleProvider:nil launchOptions:nil];
-
+  RootViewController * vc = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+  UINavigationController * nac = [[UINavigationController alloc] initWithRootViewController:vc];
   
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  self.window.rootViewController = root;
+  self.window.rootViewController = nac;
   [self.window makeKeyAndVisible];
   return YES;
 }

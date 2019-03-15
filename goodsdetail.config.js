@@ -22,6 +22,8 @@ function createCustomModuleIdFactory() {
 function processCustomModuleFilter(module) {
     if (module['path'].indexOf(pathSep + 'src' + pathSep + 'goodsdetail' + pathSep) > 0) {
         return true;
+    } else if (module['path'].indexOf(pathSep + 'goodsdetail.js') > 0) {
+        return true;
     }
     return false;
 }

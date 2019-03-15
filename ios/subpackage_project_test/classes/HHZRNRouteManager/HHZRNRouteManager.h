@@ -10,10 +10,11 @@
 #import "HHZRNRouteModel.h"
 #import <React/RCTBridge.h>
 #import "RCTBridge+HHZLoadOtherJS.h"
+#import <React/RCTRootView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HHZRNRouteManager : NSObject<RCTBridgeDelegate>
+@interface HHZRNRouteManager : NSObject
 //桥接bridge
 @property (nonatomic, strong) RCTBridge * bridge;
 
@@ -27,6 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
  以配置文件启动
  */
 -(void)startWithConfig:(NSArray<HHZRNRouteModel *> *)modelArray;
+
+
+/**
+ 生成RCTView对象
+
+ @param key 当前Key
+ */
+-(RCTRootView *)generateRCTViewWithModuleName:(NSString *)moduleName key:(NSString *)key;
 @end
 
 NS_ASSUME_NONNULL_END

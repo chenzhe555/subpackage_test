@@ -22,6 +22,8 @@ function createCustomModuleIdFactory() {
 function processCustomModuleFilter(module) {
     if (module['path'].indexOf(pathSep + 'src' + pathSep + 'orderlist' + pathSep) > 0) {
         return true;
+    } else if (module['path'].indexOf(pathSep + 'orderlist.js') > 0) {
+        return true;
     }
     return false;
 }

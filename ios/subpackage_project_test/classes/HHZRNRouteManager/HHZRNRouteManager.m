@@ -23,7 +23,6 @@
   dispatch_once(&onceToken, ^{
     manager = [HHZRNRouteManager new];
     [[NSNotificationCenter defaultCenter] addObserver:manager selector:@selector(loadCommonJS:) name:RCTJavaScriptDidLoadNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:manager selector:@selector(loadCommonJS2:) name:RCTJavaScriptDidFailToLoadNotification object:nil];
   });
   return manager;
 }
@@ -47,19 +46,12 @@
   NSLog(@"notiii : \n %@",noti.object);
 }
 
-
--(void)loadCommonJS2:(NSNotification *)noti
-{
-  NSLog(@"notiii : \n %@",noti.object);
-}
-
-
 /**
  第一次加载Bundle文件
  */
 -(void)loadFirstBundle:(HHZRNRouteModel *)model
 {
-  self.bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
+  self.bridge = [[RCTBridge alloc] initWithBundleURL:[[NSBundle mainBundle] URLForResource:model.valueModel.bundleName withExtension:@"bundle"] moduleProvider:nil launchOptions:nil];
   self.isLoadOnce = YES;
 }
 
@@ -71,8 +63,25 @@
   
 }
 
--(NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+-(RCTRootView *)generateRCTViewWithModuleName:(NSString *)moduleName key:(NSString *)key
 {
-  return [[NSBundle mainBundle] URLForResource:@"common" withExtension:@"bundle"];
+  NSString * bundleName = nil;
+  for (HHZRNRouteModel * model in self.modelArray) {
+    if ([model.key isEqualToString:key]) {
+      bundleName = model.valueModel.bundleName;
+      NSError *error = nil;
+      //获取detail Bundle文件
+      NSData * otherBundleData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"].path
+                                                         options:NSDataReadingMappedIfSafe
+                                                           error:&error];
+      if (!error && !model.valueModel.isHaveLoad) {
+        //加载eDetailbundle
+        [self.bridge.batchedBridge executeSourceCode:otherBundleData sync:NO];
+        model.valueModel.isHaveLoad = YES;
+        break;
+      }
+    }
+  }
+  return [[RCTRootView alloc] initWithBridge:self.bridge moduleName:bundleName initialProperties:nil];
 }
 @end

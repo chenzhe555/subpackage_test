@@ -8,9 +8,7 @@
 
 #import "RootViewController.h"
 #import "HHZRNRouteManager.h"
-
-#import <React/RCTBundleURLProvider.h>
-#import <React/RCTRootView.h>
+#import "RNViewController.h"
 
 @interface RootViewController ()
 
@@ -33,17 +31,17 @@
   model1.valueModel.bundleName = @"common";
   
   HHZRNRouteModel * model2 = [[HHZRNRouteModel alloc] init];
-  model2.key = @"GOODS_DETAIL";
+  model2.key = @"GOODS_DETAIL_KEY";
   model2.isPreLoad = NO;
   model2.valueModel.bundleName = @"goodsdetail";
   
   HHZRNRouteModel * model3 = [[HHZRNRouteModel alloc] init];
-  model3.key = @"ORDER_LIST";
+  model3.key = @"ORDER_LIST_KEY";
   model3.isPreLoad = NO;
   model3.valueModel.bundleName = @"orderlist";
   
   HHZRNRouteModel * model4 = [[HHZRNRouteModel alloc] init];
-  model4.key = @"SECKILL";
+  model4.key = @"SECKILL_KEY";
   model4.isPreLoad = NO;
   model4.valueModel.bundleName = @"seckill";
   
@@ -55,26 +53,23 @@
   [[HHZRNRouteManager shareManager] startWithConfig:mutaArr];
 }
 
--(void)loadRCTView
-{
-  NSError *error = nil;
-  //获取detail Bundle文件
-  NSData * detailBundleData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] URLForResource:@"allbusiness.ios" withExtension:@"bundle"].path
-                                                     options:NSDataReadingMappedIfSafe
-                                                       error:&error];
-  [[HHZRNRouteManager shareManager].bridge.batchedBridge executeSourceCode:detailBundleData sync:NO];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:[HHZRNRouteManager shareManager].bridge moduleName:@"subpackage_project_test" initialProperties:nil];
-  self.view = rootView;
-  
-}
 
 - (IBAction)goToGoodsDetailAction:(id)sender {
+  RNViewController * vc = [[RNViewController alloc] init];
+  vc.key = @"GOODS_DETAIL_KEY";
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)goToOrderListAction:(id)sender {
+  RNViewController * vc = [[RNViewController alloc] init];
+  vc.key = @"ORDER_LIST_KEY";
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)goToSeckillAction:(id)sender {
+  RNViewController * vc = [[RNViewController alloc] init];
+  vc.key = @"SECKILL_KEY";
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 
