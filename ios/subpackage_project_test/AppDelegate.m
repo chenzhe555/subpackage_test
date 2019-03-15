@@ -6,37 +6,25 @@
  */
 
 #import "AppDelegate.h"
-
+#import "RootViewController.h"
 #import <React/RCTBridge.h>
-#import <React/RCTBundleURLProvider.h>
-#import <React/RCTRootView.h>
+
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"subpackage_project_test"
-                                            initialProperties:nil];
+  RootViewController * root = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
 
-  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+  
+  [[RCTBridge alloc] initWithBundleURL:[[NSBundle mainBundle] URLForResource:@"common" withExtension:@"bundle"] moduleProvider:nil launchOptions:nil];
 
+  
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
+  self.window.rootViewController = root;
   [self.window makeKeyAndVisible];
   return YES;
-}
-
-- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
-{
-#if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-#else
-  return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-#endif
 }
 
 @end
