@@ -15,8 +15,7 @@ export default class SeckillMainVC extends React.Component {
   render() {
     return (
       <View style={{ marginTop: 100 }}>
-        <Text onPress={this._clicked}>SeckillMainVC(点击)</Text>
-          <Image source={require('../assets/images/presell_start_pic.png')} style={[{width: 25, height: 25, marginTop: 50}]}/>
+        <Text onPress={this._clicked}>SeckillMainVC(点击)-1</Text>
       </View>
     )
   }

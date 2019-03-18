@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "HHZRNRouteManager.h"
 #import "RNViewController.h"
+#import <HHZAlert/HHZToastView.h>
 
 @interface RootViewController ()
 
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
   [self loadBundles];
+  [self downloadBundle];
 }
 
 -(void)loadBundles
@@ -53,22 +55,34 @@
   [[HHZRNRouteManager shareManager] startWithConfig:mutaArr];
 }
 
+-(void)downloadBundle
+{
+  [[HHZRNRouteManager shareManager] downloadBundleZipFile:@"http://localhost/xyz2.zip" callback:^(NSInteger type) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [[HHZToastView shareManager] showToastInCenter:@"下载成功"];
+    });
+  }];
+}
+
 
 - (IBAction)goToGoodsDetailAction:(id)sender {
   RNViewController * vc = [[RNViewController alloc] init];
   vc.key = @"GOODS_DETAIL_KEY";
+  vc.moduleName = @"goodsdetail";
   [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)goToOrderListAction:(id)sender {
   RNViewController * vc = [[RNViewController alloc] init];
   vc.key = @"ORDER_LIST_KEY";
+  vc.moduleName = @"orderlist";
   [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)goToSeckillAction:(id)sender {
   RNViewController * vc = [[RNViewController alloc] init];
   vc.key = @"SECKILL_KEY";
+  vc.moduleName = @"seckill";
   [self.navigationController pushViewController:vc animated:YES];
 }
 

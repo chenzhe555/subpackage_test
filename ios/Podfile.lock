@@ -161,6 +161,7 @@ PODS:
   - SDWebImage/GIF (4.4.2):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SSZipArchive (2.1.4)
   - yoga (0.59.1.React)
 
 DEPENDENCIES:
@@ -195,6 +196,7 @@ DEPENDENCIES:
   - RNCzNavigationview (from `../node_modules/react-native-cz-navigationview/ios/RNCzNavigationview.podspec`)
   - RNCzPermission (from `../node_modules/react-native-cz-permission/ios/RNCzPermission.podspec`)
   - RNCzToast (from `../node_modules/react-native-cz-toast/ios/RNCzToast.podspec`)
+  - SSZipArchive (~> 2.1.4)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga/yoga.podspec`)
 
 SPEC REPOS:
@@ -202,6 +204,7 @@ SPEC REPOS:
     - boost-for-react-native
     - FLAnimatedImage
     - SDWebImage
+    - SSZipArchive
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -273,8 +276,9 @@ SPEC CHECKSUMS:
   RNCzPermission: f4d63463a97be5dbe10974f1455a49a48f086ad7
   RNCzToast: af899089ac6d4731fa5e85f33f8d9637db7822b8
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   yoga: 128daf064cacaede0c3bb27424b6b4c71052e6cd
 
-PODFILE CHECKSUM: 5316e329c44c7734a73db004294653e950abeb51
+PODFILE CHECKSUM: 52fc15af09d694be8cdb5b5a47b4402b43515ffd
 
 COCOAPODS: 1.5.3

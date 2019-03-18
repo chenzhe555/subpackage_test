@@ -12,15 +12,13 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4F7EDF3346545E19C65C84B7 /* libPods-subpackage_project_test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EEAB5FA822A6E564178A04 /* libPods-subpackage_project_test.a */; };
+		94A16192223F849700380B25 /* common.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94A16190223F849600380B25 /* common.bundle */; };
+		94A16193223F849700380B25 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 94A16191223F849600380B25 /* assets */; };
 		94B537AC223B7D0700E38B60 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B537AA223B7D0700E38B60 /* RootViewController.m */; };
 		94B537AD223B7D0700E38B60 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B537AB223B7D0700E38B60 /* RootViewController.xib */; };
 		94B53806223B83A600E38B60 /* HHZRNRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B53805223B83A600E38B60 /* HHZRNRouteManager.m */; };
 		94B53809223B83CE00E38B60 /* HHZRNRouteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B53808223B83CE00E38B60 /* HHZRNRouteModel.m */; };
 		94B5380E223B946A00E38B60 /* RCTBridge+HHZLoadOtherJS.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B5380D223B946900E38B60 /* RCTBridge+HHZLoadOtherJS.m */; };
-		94BB9295223BB4AF0072FCE2 /* common.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94BB9291223BB4AE0072FCE2 /* common.bundle */; };
-		94BB9296223BB4AF0072FCE2 /* goodsdetail.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94BB9292223BB4AE0072FCE2 /* goodsdetail.bundle */; };
-		94BB9297223BB4AF0072FCE2 /* orderlist.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94BB9293223BB4AE0072FCE2 /* orderlist.bundle */; };
-		94BB9298223BB4AF0072FCE2 /* seckill.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94BB9294223BB4AE0072FCE2 /* seckill.bundle */; };
 		94BB929B223BB6950072FCE2 /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BB929A223BB6950072FCE2 /* RNViewController.m */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +34,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = subpackage_project_test/main.m; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		729837D113FE3B570E6B5948 /* Pods-subpackage_project_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-subpackage_project_test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-subpackage_project_test/Pods-subpackage_project_test.debug.xcconfig"; sourceTree = "<group>"; };
+		94A16190223F849600380B25 /* common.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = common.bundle; path = subpackage_project_test/common.bundle; sourceTree = "<group>"; };
+		94A16191223F849600380B25 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = subpackage_project_test/assets; sourceTree = "<group>"; };
 		94B537A9223B7D0700E38B60 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		94B537AA223B7D0700E38B60 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		94B537AB223B7D0700E38B60 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
@@ -45,10 +45,6 @@
 		94B53808223B83CE00E38B60 /* HHZRNRouteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHZRNRouteModel.m; sourceTree = "<group>"; };
 		94B5380C223B946900E38B60 /* RCTBridge+HHZLoadOtherJS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTBridge+HHZLoadOtherJS.h"; sourceTree = "<group>"; };
 		94B5380D223B946900E38B60 /* RCTBridge+HHZLoadOtherJS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RCTBridge+HHZLoadOtherJS.m"; sourceTree = "<group>"; };
-		94BB9291223BB4AE0072FCE2 /* common.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = common.bundle; path = subpackage_project_test/common.bundle; sourceTree = "<group>"; };
-		94BB9292223BB4AE0072FCE2 /* goodsdetail.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = goodsdetail.bundle; path = subpackage_project_test/goodsdetail.bundle; sourceTree = "<group>"; };
-		94BB9293223BB4AE0072FCE2 /* orderlist.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = orderlist.bundle; path = subpackage_project_test/orderlist.bundle; sourceTree = "<group>"; };
-		94BB9294223BB4AE0072FCE2 /* seckill.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = seckill.bundle; path = subpackage_project_test/seckill.bundle; sourceTree = "<group>"; };
 		94BB9299223BB6950072FCE2 /* RNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNViewController.h; sourceTree = "<group>"; };
 		94BB929A223BB6950072FCE2 /* RNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNViewController.m; sourceTree = "<group>"; };
 		E8313C25C496BD5ACEE89362 /* Pods-subpackage_project_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-subpackage_project_test.release.xcconfig"; path = "Pods/Target Support Files/Pods-subpackage_project_test/Pods-subpackage_project_test.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,10 +68,8 @@
 		13B07FAE1A68108700A75B9A /* subpackage_project_test */ = {
 			isa = PBXGroup;
 			children = (
-				94BB9291223BB4AE0072FCE2 /* common.bundle */,
-				94BB9292223BB4AE0072FCE2 /* goodsdetail.bundle */,
-				94BB9293223BB4AE0072FCE2 /* orderlist.bundle */,
-				94BB9294223BB4AE0072FCE2 /* seckill.bundle */,
+				94A16191223F849600380B25 /* assets */,
+				94A16190223F849600380B25 /* common.bundle */,
 				94B53783223B7CF000E38B60 /* classes */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -209,12 +203,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BB9298223BB4AF0072FCE2 /* seckill.bundle in Resources */,
-				94BB9297223BB4AF0072FCE2 /* orderlist.bundle in Resources */,
+				94A16193223F849700380B25 /* assets in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				94BB9295223BB4AF0072FCE2 /* common.bundle in Resources */,
-				94BB9296223BB4AF0072FCE2 /* goodsdetail.bundle in Resources */,
+				94A16192223F849700380B25 /* common.bundle in Resources */,
 				94B537AD223B7D0700E38B60 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

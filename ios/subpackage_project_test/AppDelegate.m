@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import <React/RCTBridge.h>
-
+#import "HHZRNRouteManager.h"
 
 
 @implementation AppDelegate

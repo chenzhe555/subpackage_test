@@ -11,7 +11,7 @@ export default class OrderListMainVC extends React.Component {
     render() {
     return (
       <View style={{ marginTop: 100 }}>
-        <Text>OrderListMainVC</Text>
+        <Text>OrderListMainVC-2</Text>
         <ImagePlaceholder
           width={200}
           height={200}
@@ -19,7 +19,6 @@ export default class OrderListMainVC extends React.Component {
             'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1552632483&di=d61ca696a8710229ead2fcb530d3bff0&src=http://img3.duitang.com/uploads/blog/201504/03/20150403235853_ZtrsW.thumb.700_0.jpeg'
           }
         />
-          <Image source={require('../assets/images/phone.png')} style={[{width: 36, height: 36, marginTop: 50}]}/>
       </View>
     )
   }

@@ -12,6 +12,9 @@
 #import "RCTBridge+HHZLoadOtherJS.h"
 #import <React/RCTRootView.h>
 
+//type: 1.下载&保存成功 2.下载&保存失败
+typedef void (^DownZipCallback)(NSInteger type);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HHZRNRouteManager : NSObject
@@ -36,6 +39,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param key 当前Key
  */
 -(RCTRootView *)generateRCTViewWithModuleName:(NSString *)moduleName key:(NSString *)key;
+
+
+/**
+ 下载Bundle的Zip包
+
+ @param url Zip包下载地址
+ */
+-(void)downloadBundleZipFile:(NSString *)urlString callback:(DownZipCallback)callback;
 @end
 
 NS_ASSUME_NONNULL_END

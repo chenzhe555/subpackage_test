@@ -23,7 +23,7 @@
 
 -(void)loadRCTView
 {
-  RCTRootView * view = [[HHZRNRouteManager shareManager] generateRCTViewWithModuleName:@"subpackage_project_test" key:self.key];
+  RCTRootView * view = [[HHZRNRouteManager shareManager] generateRCTViewWithModuleName:self.moduleName key:self.key];
   if (view) {
     self.view = view;
   }

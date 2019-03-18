@@ -43,6 +43,8 @@ target 'subpackage_project_test' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  #解压Zip
+  pod 'SSZipArchive', '~> 2.1.4'
 end
 
 

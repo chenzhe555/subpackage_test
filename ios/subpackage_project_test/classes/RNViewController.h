@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RNViewController : UIViewController
 @property (nonatomic, copy) NSString * key;
+@property (nonatomic, copy) NSString * moduleName;
 @end
 
 NS_ASSUME_NONNULL_END
