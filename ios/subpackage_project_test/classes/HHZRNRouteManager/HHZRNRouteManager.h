@@ -12,8 +12,10 @@
 #import "RCTBridge+HHZLoadOtherJS.h"
 #import <React/RCTRootView.h>
 
-//type: 1.下载&保存成功 2.下载&保存失败
-typedef void (^DownZipCallback)(NSInteger type);
+//下载进度
+typedef void (^ProgressHandler)(NSString * _Nonnull source, long loadNum, long totalNum);
+//下载结果
+typedef void (^CompletionHandler)(NSString * _Nonnull path, BOOL success, NSError * _Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -46,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param url Zip包下载地址
  */
--(void)downloadBundleZipFile:(NSString *)urlString callback:(DownZipCallback)callback;
+-(void)downloadBundleZipFile:(NSString *)urlString processHandler:(ProgressHandler)processHandler completionHandler:(CompletionHandler)completionHandler;
 @end
 
 NS_ASSUME_NONNULL_END

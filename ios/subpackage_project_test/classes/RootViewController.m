@@ -57,10 +57,14 @@
 
 -(void)downloadBundle
 {
-  [[HHZRNRouteManager shareManager] downloadBundleZipFile:@"http://localhost/xyz2.zip" callback:^(NSInteger type) {
-    dispatch_async(dispatch_get_main_queue(), ^{
-      [[HHZToastView shareManager] showToastInCenter:@"下载成功"];
-    });
+  [[HHZRNRouteManager shareManager] downloadBundleZipFile:@"http://localhost/xy3.zip" processHandler:^(NSString * _Nonnull source, long loadNum, long totalNum) {
+    
+  } completionHandler:^(NSString * _Nonnull path, BOOL success, NSError * _Nullable error) {
+    if (success && !error) {
+      dispatch_async(dispatch_get_main_queue(), ^{
+        [[HHZToastView shareManager] showToastInCenter:@"下载成功"];
+      });
+    }
   }];
 }
 

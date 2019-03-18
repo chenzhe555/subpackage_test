@@ -23,7 +23,6 @@
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     manager = [HHZRNRouteManager new];
-    [[NSNotificationCenter defaultCenter] addObserver:manager selector:@selector(loadCommonJS:) name:RCTJavaScriptDidLoadNotification object:nil];
   });
   return manager;
 }
@@ -42,11 +41,6 @@
   }
 }
 
--(void)loadCommonJS:(NSNotification *)noti
-{
-  NSLog(@"notiii : \n %@",noti.object);
-}
-
 /**
  第一次加载Bundle文件
  */
@@ -56,13 +50,6 @@
   self.isLoadOnce = YES;
 }
 
-/**
- 加载更多的Bundle文件
- */
--(void)loadMoreBundle
-{
-  
-}
 
 -(RCTRootView *)generateRCTViewWithModuleName:(NSString *)moduleName key:(NSString *)key
 {
@@ -89,30 +76,31 @@
   return [[RCTRootView alloc] initWithBridge:self.bridge moduleName:bundleName initialProperties:nil];
 }
 
--(void)downloadBundleZipFile:(NSString *)urlString callback:(DownZipCallback)callback
+-(void)downloadBundleZipFile:(NSString *)urlString processHandler:(ProgressHandler)processHandler completionHandler:(CompletionHandler)completionHandler
 {
-  [callback copy];
+  [processHandler copy];
+  [completionHandler copy];
   NSURLSessionDownloadTask * task = [[NSURLSession sharedSession] downloadTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
     if (!error) {
       [SSZipArchive unzipFileAtPath:location.path toDestination:[self getSaveBundleUrlString] progressHandler:^(NSString * _Nonnull entry, unz_file_info zipInfo, long entryNumber, long total) {
-        NSLog(@"entry:%@", entry);
-        NSLog(@"zipInfo:%d", zipInfo);
-        NSLog(@"entryNumber:%ld", entryNumber);
-        NSLog(@"total:%ld", total);
-
+        if (processHandler) processHandler(entry, entryNumber, total);
       } completionHandler:^(NSString * _Nonnull path, BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded && !error) {
-          callback(1);
-        } else {
-          callback(2);
-        }
+        if (completionHandler) completionHandler(path, succeeded, error);
       }];
+    } else {
+      if (completionHandler) completionHandler(@"", NO, [NSError errorWithDomain:@"文件下载失败!" code:111111 userInfo:nil]);
     }
   }];
   [task resume];
 }
 
 #pragma mark 辅助方法
+
+/**
+ 获取bundle存储地址
+
+ @param bundleName bundle名
+ */
 -(NSURL *)getBundleURL:(NSString *)bundleName
 {
   NSURL * bundleURL = [[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"];
@@ -132,6 +120,6 @@
  */
 -(NSString *)getSaveBundleUrlString
 {
-  return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+  return [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"/jsbundles"];
 }
 @end
