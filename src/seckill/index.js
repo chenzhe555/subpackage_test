@@ -1,6 +1,6 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import Toast from 'react-native-cz-toast'
+import React from 'react';
+import { View, Text, Image } from 'react-native';
+import Toast from 'react-native-cz-toast';
 
 export default class SeckillMainVC extends React.Component {
     constructor(props) {
@@ -16,6 +16,7 @@ export default class SeckillMainVC extends React.Component {
     return (
       <View style={{ marginTop: 100 }}>
         <Text onPress={this._clicked}>SeckillMainVC(点击)</Text>
+          <Image source={require('../assets/images/presell_start_pic.png')} style={[{width: 25, height: 25, marginTop: 50}]}/>
       </View>
     )
   }
