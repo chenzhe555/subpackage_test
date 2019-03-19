@@ -46,6 +46,8 @@ target 'subpackage_project_test' do
   #解压Zip
   pod 'SSZipArchive', '~> 2.1.4' 
   pod 'MJExtension', '~> 3.0.15.1'
+  
+  pod 'HHZRNRouteManager', :git => 'https://github.com/chenzhe555/HHZRNRouteManager.git'
 end
 
 

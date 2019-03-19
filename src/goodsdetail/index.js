@@ -11,7 +11,7 @@ export default class GoodsDetailMainVC extends React.Component {
     return (
       <View style={{ marginTop: 100 }}>
         <Text>GoodsDetailMainVC-2</Text>
-        <Image source={require("@images/phone.png")} style={[{width: 36, height: 36}]}/>
+        <Image source={require("@images/goodsdetail/goodsdetail.png")} style={[{width: 36, height: 36}]}/>
       </View>
     )
   }
