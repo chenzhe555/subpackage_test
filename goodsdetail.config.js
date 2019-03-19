@@ -28,7 +28,6 @@ function processCustomModuleFilter(module) {
     } else if (module['path'].indexOf(pathSep + 'goodsdetail.js') > 0) {
         return true;
     } else if (module['path'].indexOf('.png') > 0) {
-        console.log('processCustomModuleFilter::: ' + module['path']);
         return true;
     }
     return false;

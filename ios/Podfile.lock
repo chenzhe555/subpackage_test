@@ -80,6 +80,7 @@ PODS:
   - HHZUtils/HHZUtils/qrcode (0.0.3.5)
   - HHZUtils/HHZUtils/sectionIndex (0.0.3.5)
   - HHZUtils/HHZUtils/system (0.0.3.5)
+  - MJExtension (3.0.15.1)
   - React (0.59.1):
     - React/Core (= 0.59.1)
   - react-native-fast-image (5.1.2):
@@ -173,6 +174,7 @@ DEPENDENCIES:
   - HHZCategory (from `https://github.com/chenzhe555/HHZCategory.git`)
   - HHZConfigs (from `https://github.com/chenzhe555/HHZConfigs.git`)
   - HHZUtils (from `https://github.com/chenzhe555/HHZUtils.git`)
+  - MJExtension (~> 3.0.15.1)
   - react-native-fast-image (from `../node_modules/react-native-fast-image/react-native-fast-image.podspec`)
   - React/ART (from `../node_modules/react-native`)
   - React/Core (from `../node_modules/react-native`)
@@ -203,6 +205,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
     - FLAnimatedImage
+    - MJExtension
     - SDWebImage
     - SSZipArchive
 
@@ -268,6 +271,7 @@ SPEC CHECKSUMS:
   HHZCategory: 6e60df15dfa858892be53ce9f63f03accd40b41f
   HHZConfigs: 1ddbea52ec7aeee8774fa7d79ac5929099b72c9b
   HHZUtils: 4c92277f7681d976fb5fef75b9b92d713c2dad03
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   React: 1d605e098d69bdf08960787f3446f0a9dc2e2ccf
   react-native-fast-image: cba3d9bf9c2cf8ddb643d887a686c53a5dd90a2c
   RNCzAlipayCalendar: 2d7103759c4fcddbec5d8a658efa874ea0b5ef83
@@ -279,6 +283,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   yoga: 128daf064cacaede0c3bb27424b6b4c71052e6cd
 
-PODFILE CHECKSUM: 52fc15af09d694be8cdb5b5a47b4402b43515ffd
+PODFILE CHECKSUM: 16d917ef07272bca38e8a9235933bc7e8af1ce13
 
 COCOAPODS: 1.5.3

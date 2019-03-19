@@ -44,7 +44,8 @@ target 'subpackage_project_test' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   #解压Zip
-  pod 'SSZipArchive', '~> 2.1.4'
+  pod 'SSZipArchive', '~> 2.1.4' 
+  pod 'MJExtension', '~> 3.0.15.1'
 end
 
 

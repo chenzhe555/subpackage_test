@@ -15,7 +15,7 @@ export default class SeckillMainVC extends React.Component {
   render() {
     return (
       <View style={{ marginTop: 100 }}>
-        <Text onPress={this._clicked}>SeckillMainVC(点击)-1</Text>
+        <Text onPress={this._clicked}>SeckillMainVC(点击)-5 d</Text>
       </View>
     )
   }

@@ -21,7 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
   [self loadBundles];
-  [self downloadBundle];
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self downloadBundle];
+  });
 }
 
 -(void)loadBundles
@@ -31,28 +33,34 @@
   model1.key = @"COMMON_KEY";
   model1.isPreLoad = YES;
   model1.valueModel.bundleName = @"common";
+  model1.valueModel.moduleName = @"";
   
   HHZRNRouteModel * model2 = [[HHZRNRouteModel alloc] init];
   model2.key = @"GOODS_DETAIL_KEY";
-  model2.isPreLoad = NO;
+  model2.isPreLoad = YES;
   model2.valueModel.bundleName = @"goodsdetail";
+  model2.valueModel.moduleName = @"goodsdetail";
   
   HHZRNRouteModel * model3 = [[HHZRNRouteModel alloc] init];
   model3.key = @"ORDER_LIST_KEY";
-  model3.isPreLoad = NO;
+  model3.isPreLoad = YES;
   model3.valueModel.bundleName = @"orderlist";
+  model3.valueModel.moduleName = @"orderlist";
   
   HHZRNRouteModel * model4 = [[HHZRNRouteModel alloc] init];
   model4.key = @"SECKILL_KEY";
-  model4.isPreLoad = NO;
+  model4.isPreLoad = YES;
   model4.valueModel.bundleName = @"seckill";
+  model4.valueModel.moduleName = @"seckill";
   
   [mutaArr addObject:model1];
   [mutaArr addObject:model2];
   [mutaArr addObject:model3];
   [mutaArr addObject:model4];
   
-  [[HHZRNRouteManager shareManager] startWithConfig:mutaArr];
+  [[HHZRNRouteManager shareManager] startWithCache:NO modelArray:mutaArr callback:^(BOOL success, NSDictionary *dic) {
+    NSLog(@"ssssss---startWithCache success");
+  }];
 }
 
 -(void)downloadBundle
@@ -63,6 +71,11 @@
     if (success && !error) {
       dispatch_async(dispatch_get_main_queue(), ^{
         [[HHZToastView shareManager] showToastInCenter:@"下载成功"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+          [[HHZRNRouteManager shareManager] reloadCallback:^(BOOL success, NSDictionary *dic) {
+            NSLog(@"ssssss---reloadCallback success");
+          }];
+        });
       });
     }
   }];
@@ -72,21 +85,18 @@
 - (IBAction)goToGoodsDetailAction:(id)sender {
   RNViewController * vc = [[RNViewController alloc] init];
   vc.key = @"GOODS_DETAIL_KEY";
-  vc.moduleName = @"goodsdetail";
   [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)goToOrderListAction:(id)sender {
   RNViewController * vc = [[RNViewController alloc] init];
   vc.key = @"ORDER_LIST_KEY";
-  vc.moduleName = @"orderlist";
   [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)goToSeckillAction:(id)sender {
   RNViewController * vc = [[RNViewController alloc] init];
   vc.key = @"SECKILL_KEY";
-  vc.moduleName = @"seckill";
   [self.navigationController pushViewController:vc animated:YES];
 }
 

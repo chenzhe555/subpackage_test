@@ -9,15 +9,17 @@
 #import "HHZRNRouteModel.h"
 
 @implementation HHZRNRouteValueModel
-
+MJCodingImplementation
 @end
 
 @implementation HHZRNRouteModel
+MJCodingImplementation
 - (instancetype)init
 {
   self = [super init];
   if (self) {
     self.valueModel = [[HHZRNRouteValueModel alloc] init];
+    self.generateRCTViewCallback = nil;
   }
   return self;
 }

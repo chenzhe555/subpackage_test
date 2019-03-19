@@ -23,10 +23,12 @@
 
 -(void)loadRCTView
 {
-  RCTRootView * view = [[HHZRNRouteManager shareManager] generateRCTViewWithModuleName:self.moduleName key:self.key];
-  if (view) {
-    self.view = view;
-  }
+  __weak typeof(self) weakSelf = self;
+  [[HHZRNRouteManager shareManager] generateRCTViewWithKey:self.key callback:^(RCTRootView * _Nullable view) {
+    if (view) {
+      weakSelf.view = view;
+    }
+  }];
 }
 
 @end
