@@ -100,7 +100,7 @@
           NSData * otherBundleData = [NSData dataWithContentsOfFile:bundleURL.path options:NSDataReadingMappedIfSafe error:&error];
           if (!error) {
             //加载其它bundle文件
-            [self.bridge.batchedBridge executeSourceCode:otherBundleData sync:NO];
+            [self.bridge.batchedBridge executeSourceCode:otherBundleData sync:YES];
           }
         }
       } else {

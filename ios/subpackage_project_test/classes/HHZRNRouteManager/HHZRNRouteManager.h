@@ -36,22 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(instancetype)shareManager;
 
-#pragma mark 配置信息
-
-/**
- 修改常量对象
- */
--(void)modifyConstantModel:(HHZRNRouteManagerConstant *)model;
-
-
-/**
- 更新缓存中的bundle配置数组
-
- @param modelArray
- */
--(void)updateCacheModelArray:(NSArray<HHZRNRouteModel *> *)modelArray;
-
-
 #pragma mark 启动RouteManager
 
 /**
@@ -78,7 +62,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)generateRCTViewWithKey:(NSString *)key callback:(nonnull GenerateRCTViewHandler)callback;
 
 
-
 #pragma mark 下载补丁包
 /**
  下载Bundle的Zip包
@@ -86,6 +69,22 @@ NS_ASSUME_NONNULL_BEGIN
  @param url Zip包下载地址
  */
 -(void)downloadBundleZipFile:(NSString *)urlString processHandler:(ProgressHandler)processHandler completionHandler:(CompletionHandler)completionHandler;
+
+
+#pragma mark 配置信息
+
+/**
+ 修改常量对象
+ */
+-(void)modifyConstantModel:(HHZRNRouteManagerConstant *)model;
+
+
+/**
+ 更新缓存中的bundle配置数组
+ 
+ @param modelArray
+ */
+-(void)updateCacheModelArray:(NSArray<HHZRNRouteModel *> *)modelArray;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -72,9 +72,9 @@
       dispatch_async(dispatch_get_main_queue(), ^{
         [[HHZToastView shareManager] showToastInCenter:@"下载成功"];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-          [[HHZRNRouteManager shareManager] reloadCallback:^(BOOL success, NSDictionary *dic) {
-            NSLog(@"ssssss---reloadCallback success");
-          }];
+//          [[HHZRNRouteManager shareManager] reloadCallback:^(BOOL success, NSDictionary *dic) {
+//            NSLog(@"ssssss---reloadCallback success");
+//          }];
         });
       });
     }
